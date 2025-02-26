@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   var playBtn = document.getElementById("playBtn");
   var btnIcon = document.getElementById("play-btn-icon");
-  var audio = new Audio("../assets/sepenuh-hati-x-sampai-akhir-tiktok-version-128-ytshorts.savetube.me.mp3");
+  var audio = new Audio("https://github.com/KurniawanSatria/SIESTA-MD/raw/refs/heads/main/assets/About%20You.mp3");
 
   playBtn.addEventListener("click", async() => {
     if (audio.paused) {
