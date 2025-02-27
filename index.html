@@ -139,7 +139,37 @@
 <h1 class="title lined">Gallery</h1>
 <div class="line line-center blurple"></div>
 </div>
-<div class="columns is-multiline is-mobile mt-5" id="lightgallery">
+<div id="static-thumbnails">
+<a href="assets/gallery/1.png">
+<img src="assets/gallery/1.png" />
+</a>
+<a href="assets/gallery/2.png">
+<img src="assets/gallery/2.png" />
+</a>
+<a href="assets/gallery/3.png">
+<img src="assets/gallery/3.png" />
+</a>
+<a href="assets/gallery/4.png">
+<img src="assets/gallery/4.png" />
+</a>
+<a href="assets/gallery/5.png">
+<img src="assets/gallery/5.png" />
+</a>
+<a href="assets/gallery/6.png">
+<img src="assets/gallery/6.png" />
+</a>
+<a href="assets/gallery/7.png">
+<img src="assets/gallery/7.png" />
+</a>
+<a href="assets/gallery/8.png">
+<img src="assets/gallery/8.png" />
+</a>
+<a href="assets/gallery/9.png">
+<img src="assets/gallery/9.png" />
+</a>
+<a href="assets/gallery/10.png">
+<img src="assets/gallery/10.png" />
+</a>
 </div>
 </section>
 <section class="section mt-6">
@@ -166,15 +196,11 @@
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="assets/js/script.js"></script>
 <script>
-$(document).ready(function(){
-for(let i=1; i<=14; i++){
-$('#lightgallery').append('<div class="column is-one-quarter-desktop is-half-mobile"><a href="assets/gallery/'+i+'.png" class="gallery-item" data-lg-size="1024-768"><img src="assets/gallery/'+i+'.png" alt="Gallery Image"></a></div>');
-}
-lightGallery(document.getElementById('lightgallery'), {
-plugins: [lgZoom, lgThumbnail],
-licenseKey: 'your_license_key',
-speed: 500
-});
+lightGallery(document.getElementById('static-thumbnails'), {
+animateThumb: false,
+zoomFromOrigin: false,
+allowMediaOverlap: true,
+toggleThumb: true,
 });
 </script>
 </body>
