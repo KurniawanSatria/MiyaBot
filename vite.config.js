@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite';
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
-  plugins: [],
-  server: {
-    host: '0.0.0.0',
-    hmr: true, // Change this line to false disable auto-refreshing.
-  }
+plugins: [],
+server: {
+host: '0.0.0.0',
+allowedHosts: ['localhost', '127.0.0.1', 'c141a296-5e0f-4e9b-93ed-6cd976a73378-00-13hjecyuws40c.sisko.replit.dev'],
+hmr: true, 
+}
 })
