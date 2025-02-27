@@ -288,3 +288,19 @@ nav.nav-w {
     height: 0;
     padding-bottom: 65%;
 }
+.carousel-container {
+display: flex;
+overflow-x: auto;
+scroll-snap-type: x mandatory;
+gap: 1rem;
+}
+.carousel-container a {
+flex: 0 0 auto;
+scroll-snap-align: center;
+}
+.carousel-container img {
+max-width: 300px;
+height: auto;
+border-radius: 10px;
+}
+
