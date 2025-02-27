@@ -139,37 +139,7 @@
 <h1 class="title lined">Gallery</h1>
 <div class="line line-center blurple"></div>
 </div>
-<div id="static-thumbnails">
-<a href="assets/gallery/1.png">
-<img src="assets/gallery/1.png" />
-</a>
-<a href="assets/gallery/2.png">
-<img src="assets/gallery/2.png" />
-</a>
-<a href="assets/gallery/3.png">
-<img src="assets/gallery/3.png" />
-</a>
-<a href="assets/gallery/4.png">
-<img src="assets/gallery/4.png" />
-</a>
-<a href="assets/gallery/5.png">
-<img src="assets/gallery/5.png" />
-</a>
-<a href="assets/gallery/6.png">
-<img src="assets/gallery/6.png" />
-</a>
-<a href="assets/gallery/7.png">
-<img src="assets/gallery/7.png" />
-</a>
-<a href="assets/gallery/8.png">
-<img src="assets/gallery/8.png" />
-</a>
-<a href="assets/gallery/9.png">
-<img src="assets/gallery/9.png" />
-</a>
-<a href="assets/gallery/10.png">
-<img src="assets/gallery/10.png" />
-</a>
+<div id="carousel-gallery" class="carousel-container">
 </div>
 </section>
 <section class="section mt-6">
@@ -196,12 +166,25 @@
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="assets/js/script.js"></script>
 <script>
-lightGallery(document.getElementById('static-thumbnails'), {
-animateThumb: false,
-zoomFromOrigin: false,
-allowMediaOverlap: true,
-toggleThumb: true,
-});
+const container = document.getElementById('carousel-gallery')
+const folder = 'assets/gallery'
+const ext = '.png'
+const totalImages = 10
+for (let i = 0; i <= totalImages; i++) {
+const imgSrc = `${folder}/${i}${ext}`
+const anchor = document.createElement('a')
+anchor.href = imgSrc
+const img = document.createElement('img')
+img.src = imgSrc
+anchor.appendChild(img)
+container.appendChild(anchor)
+}
+lightGallery(container, {
+plugins: [lgThumbnail, lgZoom],
+speed: 500,
+mode: 'lg-slide',
+loop: true
+})
 </script>
 </body>
 </html>
