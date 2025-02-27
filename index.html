@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="assets/css/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lightgallery-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/thumbnail/lg-thumbnail.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/zoom/lg-zoom.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <script src="assets/js/jquery-3.6.0.js"></script>
 </head>
@@ -135,7 +139,8 @@
 <h1 class="title lined">Gallery</h1>
 <div class="line line-center blurple"></div>
 </div>
-<div class="columns is-multiline is-mobile mt-5" id="gallery-container"></div>
+<div class="columns is-multiline is-mobile mt-5" id="lightgallery">
+</div>
 </section>
 <section class="section mt-6">
 <div class="columns">
@@ -163,10 +168,14 @@
 <script>
 $(document).ready(function(){
 for(let i=1; i<=14; i++){
-$('#gallery-container').append('<div class="column is-one-quarter-desktop is-half-mobile"><figure class="image"><img src="assets/gallery/'+i+'.png" alt="Gallery Image"></figure></div>');
+$('#lightgallery').append('<div class="column is-one-quarter-desktop is-half-mobile"><a href="assets/gallery/'+i+'.png" class="gallery-item" data-lg-size="1024-768"><img src="assets/gallery/'+i+'.png" alt="Gallery Image"></a></div>');
 }
+lightGallery(document.getElementById('lightgallery'), {
+plugins: [lgZoom, lgThumbnail],
+licenseKey: 'your_license_key',
+speed: 500
+});
 });
 </script>
-
 </body>
 </html>
